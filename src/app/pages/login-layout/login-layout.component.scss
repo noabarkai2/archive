@@ -1,0 +1,54 @@
+.login-background {
+  background-image: url('/assets/loginPage/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.row.center {
+    text-align: center;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.icon {
+    width: fit-content;
+    
+    img {
+        max-width: 40px;
+    }
+}
+
+.icons-container {
+    margin-top: 20px;
+}
+
+.logo-text {
+    width: fit-content;
+}
+
+.primary-icon {
+    width: 40px;
+    padding:0
+}
+
+h1 {
+    font-size: 30px;
+}

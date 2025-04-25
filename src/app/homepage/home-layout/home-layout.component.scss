@@ -1,0 +1,109 @@
+@import '../../../app/shared/styles/mixin';
+
+
+.homepage-container {
+    background: #f6f6f6 0% 0% no-repeat padding-box;
+    height: 93vh;
+    overflow: hidden;
+    padding: 24px;
+    gap: 24px;
+    display: flex;
+    flex-direction: row;
+    
+    .flex-1 {
+        flex: 1;
+    }
+    
+    .flex-2 {
+        flex: 2;
+    }
+    
+    .flex-3 {
+        flex: 3;
+    }
+    
+    .flex-4 {
+        flex: 4;
+    }
+    
+    .homepage-container-title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    .homepage-container-subtitle {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .item-container {
+        background-color: white;
+        border-radius: var(--btn-border-radius-size);
+        display: flex;
+        @include boldBoxShadow;
+    }
+
+    .shadow {
+        @include boldBoxShadow;
+        border-radius: var(--btn-border-radius-size);
+    }
+    
+    .education-container {
+        gap: 16px;
+        padding: 16px;
+
+        education-status-item {
+            flex: 1;
+        }
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-qualifications-status-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        flex-grow: 2;
+    }
+
+    .personal-info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 12px;
+
+        .profile-top-conatiner {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            .profile-image {
+                height: 148px;
+                width: 148px;
+            }
+
+            .profile-title {
+                font-size: 22px;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            .profile-subtitle {
+                font-size: 14px;
+                margin: 0;
+            } 
+        }
+    }
+
+    .collections-data-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}

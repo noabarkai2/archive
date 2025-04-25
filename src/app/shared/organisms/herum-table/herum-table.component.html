@@ -1,0 +1,21 @@
+<!-- <div class="w-100" style="height: 400px">
+  <ag-grid-angular
+    [enableRtl]="true"
+    style="height: 100%"
+    class="ag-theme-alpine ag-rtl"
+    [rowData]="rowData"
+    [rowMultiSelectWithClick]="true"
+    [rowSelection]="'multiple'"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowHeight]="25"
+    [gridOptions]="gridOptions"
+    [components]="frameworkComponents"
+    (cellMouseOver)="onCellMouseOver($event)"
+    (cellMouseOut)="onCellMouseOut($event)"
+  >
+  </ag-grid-angular>
+</div> -->
+
+<ag-grid-angular class="ag-theme-balham"  style="width: 100%; height: 900px;" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef"
+  [rowData]="rowData" [class]="themeClass" (gridReady)="onGridReady($event)"></ag-grid-angular>

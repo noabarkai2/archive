@@ -1,0 +1,52 @@
+<div class="homepage-container">
+    <div class="flex-4 collections-data-container">
+        <div class="flex-4 item-container animate__animated animate__fadeInDown"></div>
+        
+        <div class="flex-2 d-flex gap-4 animate__animated animate__fadeInRight">
+            <div class="flex-1 d-flex column ">
+                <p class="homepage-container-title">מצב הכשירות שלי</p>
+                <div class="item-container my-qualifications-status-container">
+                    <app-herum-user-progress [title]="'כשירות דיגיטלית'" [type]="'solid'"></app-herum-user-progress>
+                    <app-herum-user-progress [title]="'כשירות פרונטלית'" [type]="'solid'"></app-herum-user-progress>
+                </div>
+            </div>
+
+            <div class="flex-3">
+                <p class="homepage-container-title">מצב הלמידה שלי</p>
+                <div class="item-container education-container">
+                    <education-status-item *ngFor="let item of educationsItems" [educationStatus]="item">
+                    </education-status-item>
+                </div>
+            </div>
+        </div>
+
+        <div class="animate__animated animate__fadeInUp">
+            <p class="homepage-container-title">מארזי הלמידה שלי</p>
+            <div class="flex-4 d-flex gap-4 column">
+                <collection-horizontal-overview class="shadow" *ngFor="let collectionSubscription of userCollectionsSubscriptions"
+                    [collectionSubscription]="collectionSubscription"></collection-horizontal-overview>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-1 item-container personal-info-container animate__animated animate__fadeInLeft">
+        <p class="homepage-container-title m-0 ">הפרופיל שלי</p>
+        <div class="profile-top-conatiner">
+            <div class="profile-image-container">
+                <img src="assets/homepage/userAvatar.png" class="profile-image" alt="profile-image">
+            </div>
+            <div class="profile-name-container">
+                <p class="profile-title">שם היוזר</p>
+                <p class="profile-subtitle">תפקיד </p>
+            </div>
+        </div>
+        <div class="profile-center-conatiner">
+            <p class="homepage-container-subtitle">פרטים כלליים</p>
+            <labels-with-icons-list [items]="userPersonalGeneralDetails"></labels-with-icons-list>
+        </div>
+        <div class="profile-bottom-conatiner">
+            <p class="homepage-container-subtitle">פרטים בסיסיים</p>
+            <key-value-list [items]="userGeneralDetails"></key-value-list>
+        </div>
+    </div>
+</div>

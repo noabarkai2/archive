@@ -1,0 +1,11 @@
+<div class="quiz-container">
+    <p class="quiz-title">הנך עומד להגיש את המבחן</p>
+    <br>
+    <p>שים לב,</p>
+    <p>הינך עומד להגיש את המבחן, לאחר ההגשה לא יהיה באפשרותך לערוך את התשובות שהגשת.</p>
+    <p> האם ברצונך להגיש את המבחן?</p>
+    <br>
+    <p class="error-message" *ngIf="isAllQuestionsAnswered">
+        לא ניתן להגיש מבחן זה ללא מענה על כל השאלות
+    </p> 
+</div>

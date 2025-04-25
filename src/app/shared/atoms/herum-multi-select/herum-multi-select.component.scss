@@ -1,0 +1,134 @@
+@import '../../styles/mixin';
+
+// mat-form-field {
+//     border: 1px solid var(--inactive-border-color);
+//     padding: var(--btn-padding-size);
+//     padding-left: 0;
+//     padding-right: 0;
+//     border-radius: var(--btn-border-radius-size);
+//     @include boxShadow;
+// }
+
+herum-chip {
+    width: fit-content !important;
+}
+
+// input[type="text"] {
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+// }
+
+// mat-form-field:hover {
+//     border-color: var(--icons-color-light-2);
+// }
+
+// mat-form-field:focus {
+//     outline: none;
+//     border-color: var(--icons-color-light-1);
+//     box-shadow: 0 0 5px var(--icons-color-light-1);
+// }
+
+// mat-form-field:disabled {
+//     opacity: 0.6;
+//     cursor: not-allowed;
+// }
+
+// mat-form-field::placeholder {
+//     color: var(--disabled-text-color);
+// }
+
+// .no-underline-input {
+//     border-bottom: none;
+//     direction: rtl !important;
+//     outline: none;
+// }
+
+// .mat-form-field-container {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+// }
+
+// .fa-xmark {
+//     color: var(--secondary-color);
+// }
+
+// .mat-form-field-container .icon {
+//     position: absolute;
+//     left: 10px;
+//     cursor: pointer;
+// }
+
+// .mat-form-field-container mat-form-field {
+//     padding-left: 30px;
+// }
+
+// .mat-form-field-container mat-form-field:disabled {
+//     background-color: #eee;
+// }
+
+// span {
+//     justify-content: center;
+//     display: flex;
+// }
+
+.shevron-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.fa-solid {
+    color: var(--icons-color) !important;
+}
+
+// ::ng-deep.mat-form-field-underline {
+//     display: none !important;
+// }
+
+// ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+//     padding-bottom: 0 !important;
+// }
+
+// ::ng-deep .mat-form-field-infix {
+//     border-top: none !important;
+// }
+
+::ng-deep .mat-chip.mat-standard-chip {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+// ::ng-deep.mat-chip-list-wrapper {
+//     padding-right: 10px !important;
+//     padding-left: 25px !important;
+// }
+
+// input {
+//     text-align: right !important;
+// }
+
+// .mat-option:hover {
+//     background-color: #e0e0e0;
+//     color: #333;
+//     cursor: pointer;
+//     font-weight: bolder;
+// }
+
+// .mat-option {
+//     transition: background-color 0.3s ease, color 0.3s ease;
+// }
+
+// .selected {
+//     color: var(--icons-color) !important;
+//     font-weight: bolder;
+//     cursor: not-allowed !important;
+// }
+
+.dropbtn {
+    display: flex;
+    gap: 8px;
+}

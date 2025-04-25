@@ -1,0 +1,33 @@
+.controllers-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+.link-item {
+    padding: 8px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    max-width: 12%;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link-text {
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid var(--icons-color);
+
+    span {
+        color: var(--icons-color)!important;
+    }
+}

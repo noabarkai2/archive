@@ -1,0 +1,48 @@
+.answers-container {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    text-align: center;
+    max-height: 200px;
+    
+    .answer-item {
+        display: flex;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        align-items: center;
+        cursor: pointer;
+        min-width: 35%;
+        min-height: 90px;
+        padding: 20px;
+        border-radius: 20px;
+
+        p{
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+            user-select: none;
+        }
+    }
+
+    .answer-item:active {
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+
+    .selected-answer {
+        outline: 2px solid black;
+        color: white;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+
+    .correct {
+        border: 2px solid var(--icons-color);
+    }
+
+    .wrong {
+        border: 2px solid var(--error-color);
+    }
+
+   
+}

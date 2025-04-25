@@ -1,0 +1,23 @@
+<div class="dropdown" dir="rtl" (click)="toggleDropdown()">
+    <button class="dropbtn" [ngClass]="{'open-dropbtn': isDropdownOpen}">
+        <span *ngIf="selectedOptions.length == 0">בחר/י...</span>
+
+        <herum-chip *ngFor="let option of getLimitedList()" [title]="option" (remove)="remove(option)"></herum-chip>
+        
+        <ng-container *ngIf="selectedOptions && selectedOptions.length > maxChips">
+            <herum-chip [matTooltip]="_getHiddenOptions()" 
+                [title]="(selectedOptions.length - maxChips) + '+'"></herum-chip>
+        </ng-container>
+    </button>
+
+    <div id="myDropdown" [ngClass]="{'dropdown-content': true, 'show': isDropdownOpen}">
+        <a *ngFor="let option of options; let i=index" (click)="select(option)"
+            [ngClass]="{'selected': isOptionSelected(option)}">
+            {{option}}
+        </a>
+    </div>
+
+    <span class="shevron-icon" [ngClass]="{'rotate-chevron': isDropdownOpen}">
+        <i class="fa-solid fa-chevron-down"></i>
+    </span>
+</div>

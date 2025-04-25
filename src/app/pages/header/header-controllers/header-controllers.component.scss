@@ -1,0 +1,36 @@
+.controllers-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 2%;
+}
+
+.matMenu {
+    direction: rtl;
+}
+
+::ng-deep.cdk-overlay-connected-position-bounding-box {
+    align-items: flex-end!important;
+    direction: rtl;
+}
+
+::ng-deep.mat-menu-panel {
+    min-width: 50vw!important;
+    max-width: 50vh!important;
+}
+
+::ng-deep.mat-menu-content  {
+    padding: 0!important;
+}
+
+notebook-dialog {
+    position: absolute;
+    z-index: 50;
+    width: 600px;
+    right: 33%;
+    background: white;
+    top: 100%;
+    border-radius: 8px;
+    border: 1px solid black;
+}

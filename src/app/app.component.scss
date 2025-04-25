@@ -1,0 +1,30 @@
+.vector-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.vector {
+    position: absolute;
+    bottom: -270vh;
+    left: -270vw;
+    transform: translateY(-50%);
+    width: 160vw;
+    z-index: 100;
+    // animation: runAcross 2s ease-in-out forwards;
+}
+
+@keyframes runAcross {
+    0% {
+        left: -70vw; 
+        bottom: -70vh;
+    }
+   
+    100% {
+        right: -50vw; 
+        top: -10vh;
+    }
+}

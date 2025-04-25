@@ -1,0 +1,53 @@
+<div class="quiz-container herum-card" [ngSwitch]="quizData.currentQuestion">
+    <quiz-intro class="quiz-padding" [quizData]="quizData" *ngSwitchCase="0"></quiz-intro>
+
+    <quiz-submission class="quiz-padding" 
+    *ngSwitchCase="quizData.questions.length + 1" [quizData]="quizData"></quiz-submission>
+
+    <ng-container *ngSwitchDefault>
+
+        <div class="herum-card w-100">
+            <quiz-header [quizData]="quizData" (onSelectQuestion)="_selectQuestion($event)"></quiz-header>
+        </div>
+        <div class="question-container quiz-padding">
+            <p class="question-text">{{ quizData.questions[currentQuestionIndex]?.question }}</p>
+            <ng-container *ngIf="quizData.questions[currentQuestionIndex].answers.length == 4">
+                <quiz-four-answers-question 
+                    *ngIf="getCorrectAnswersCount(quizData.questions[currentQuestionIndex]) == 1"
+                    [question]="quizData.questions[currentQuestionIndex]"
+                    (onAnswersChange)="_onAnswersChange($event, quizData.questions[currentQuestionIndex].id)">
+                </quiz-four-answers-question>
+
+                <quiz-multi-answer-question 
+                    *ngIf="getCorrectAnswersCount(quizData.questions[currentQuestionIndex]) > 1"
+                    [question]="quizData.questions[currentQuestionIndex]"
+                    (onAnswersChange)="_onAnswersChange($event, quizData.questions[currentQuestionIndex].id)">
+                </quiz-multi-answer-question>
+            </ng-container>
+            
+            <quiz-two-answers-question 
+                *ngIf="quizData.questions[currentQuestionIndex].answers.length == 2"
+                [question]="quizData.questions[currentQuestionIndex]"
+                [isSubmitted]="quizData.isSubmitted" [userAnswers]="_getUserAnswers(quizData.questions[currentQuestionIndex].id)"
+                (onAnswersChange)="_onAnswersChange($event, quizData.questions[currentQuestionIndex].id)">
+            </quiz-two-answers-question>
+        </div>
+    </ng-container>
+
+    <div class="actions-buttons-container quiz-padding">
+        <div class="left-action-buttons">
+            <herum-button [type]="'secondary'" (click)="_nextQuestion(true)"
+                *ngIf="quizData.currentQuestion > 0 && quizData.currentQuestion < quizData.questions.length ">
+                דלג על השאלה
+            </herum-button>
+
+            <herum-button [disabled]="(!isValidQuiz) && isLastQuestion" [type]="'primary'" (click)="_nextQuestion()">
+                {{ nextButtonText }}
+            </herum-button>
+        </div>
+
+        <herum-button [type]="'ghost'" *ngIf="quizData.currentQuestion > 1" (click)="_previousQuestion()">
+            לשאלה הקודמת
+        </herum-button>
+    </div>
+</div>

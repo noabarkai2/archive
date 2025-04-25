@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm" (ngSubmit)="_onSubmit()" class="form-container">
+  <h3 class="m-0">התחברות</h3>
+  <p class="description m-0">שלום! אנא הכנס תעודת זהות ומספר אישי כדי להתחבר</p>
+
+  <!-- תעודת זהות -->
+  <label for="id">תעודת זהות</label>
+  <herum-input-field [type]="'number'" formControlName="id">
+  </herum-input-field>
+  <div
+    *ngIf="loginForm.get('id')?.invalid && loginForm.get('id')?.touched"
+    class="error"
+  >
+    <span *ngIf="loginForm.get('id')?.errors?.['required']">
+      חובה למלא תעודת זהות
+    </span>
+    <span *ngIf="loginForm.get('id')?.errors?.['pattern']">
+      תעודת זהות חייבת להיות בת 9 ספרות
+    </span>
+  </div>
+
+  <!-- מספר אישי -->
+  <label for="armyId">מספר אישי</label>
+  <herum-input-field [type]="'number'" formControlName="armyId">
+  </herum-input-field>
+  <div
+    *ngIf="loginForm.get('armyId')?.invalid && loginForm.get('armyId')?.touched"
+    class="error"
+  >
+    <span *ngIf="loginForm.get('armyId')?.errors?.['required']">
+      חובה למלא מספר אישי
+    </span>
+    <span *ngIf="loginForm.get('armyId')?.errors?.['pattern']">
+      לפחות 6 ספרות
+    </span>
+  </div>
+
+  <!-- כפתור התחברות -->
+  <div class="mt-2">
+    <herum-button
+      type="primary"
+      [attr.type]="'submit'"
+      [disabled]="loginForm.invalid"
+      class="w-100"
+    >
+      התחברות לאתר
+    </herum-button>
+  </div>
+</form>

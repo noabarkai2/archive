@@ -1,0 +1,33 @@
+<div class="collection-container">
+    <div class="flex-4 title-container">
+        <div class="image-container" [ngStyle]="{'background-image': 'url(' + collectionSubscription.collectionPreview.imageUrl + ')'}"></div>
+        <!-- <img [src]="collectionSubscription.collectionPreview.imageUrl" alt="collectionImage" /> -->
+        {{collectionSubscription.collectionPreview.name}}
+    </div>
+    
+    <div class="flex-2 owner-container">
+        <p>שוייך ע"י: </p>
+        {{" "+collectionSubscription.collectionPreview.name + " "}}
+    </div>
+    
+    <div class="flex-4">
+        <herum-progress-bar [percentage]="collectionSubscription.grade" [type]="'solid'" [showPercentage]="true">
+        </herum-progress-bar>
+    </div>
+
+    <div class="flex-4 control-container">
+        <div class="flex-4 center">
+            <img src="assets/homepage/lock.png" alt=" " />
+            <p>40 שעות</p>
+        </div>
+
+        <div class="flex-4 center">
+            <img src="assets/homepage/lock.png" alt=" " />
+            <p>{{collectionSubscription.resourceSubscriptions.length}} משאבים </p>
+        </div>
+
+        <div class="flex-4 center">
+            <p class="clickable-text">התחל מארז</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+.quiz-header-container {
+    padding: 8px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    .quiz-header-title {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .question-list-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+    }
+
+    .question-item {
+        position: relative;
+        width: 44px;
+        min-width: 44px;
+        max-width: 44px;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+    .question-number {
+        padding: 0px 16px;
+        border-bottom: 2px solid;
+        justify-content: center;
+        display: flex;
+        font-size: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        user-select: none;
+    }
+
+    .current {
+        border-color: var(--text-color);
+        color: var(--text-color);
+    }
+
+    .correct {
+        border-color: var(--icons-color);
+        color: var(--icons-color);
+    }
+
+    .wrong {
+        border-color: var(--error-color);
+        color: var(--error-color);
+    }
+
+    .answered {
+        border-color: var(--text-color);
+        color: var(--text-color);
+    }
+
+    .skipped {
+        border-color: #00000085;
+        color: #00000085;
+    }
+
+    .unanswered {
+        border-color: transparent;
+        color: var(--disabled-text-color);
+    }
+
+    .skipped::after {
+        content: url('../../../../../assets/feed/icons/quiz/skip.svg');
+        position: absolute;
+        top: -14px;
+        right: 14px;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+    // .current:active {
+    //     border-color: #C1CCE3;
+    // }
+
+    // .current:hover {
+    //     border-color: #C1CCE3;
+    // }
+
+    // .correct:active {
+    //     border-color: #0D3B06;
+    // }
+
+    // .correct:hover {
+    //     border-color: #49AE74;
+    // }
+    // .wrong:active {
+    //     border-color: #CC1759;
+    // }
+
+    // .wrong:hover {
+    //     border-color: #FF4F8F;
+    // }
+
+
+     // .answered:active {
+    //     border-color: #B16DBE;
+    // }
+
+    // .answered:hover {
+    //     border-color: #CD86DB;
+    // }
+
+
+    // .unanswered:active,
+    // .skipped:active {
+    //     border-color: #C1CCE3;
+    // }
+
+    // .unanswered:active,
+    // .skipped:hover {
+    //     border-color: #E6EEFD;
+    // }
+
+    .top-buttons-conatiner {
+        display: flex;
+        justify-content: space-between;
+    }
+}

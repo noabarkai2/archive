@@ -1,0 +1,7 @@
+<narrow-collection-menu *ngIf="!isWideMode" [selectedCollection]="selectedCollection"
+    [selectedResourceInput]="selectedResource"
+    (onSelectResource)="_onSelectResource($event)"></narrow-collection-menu>
+
+<wide-collection-menu *ngIf="isWideMode" [selectedCollection]="selectedCollection"
+    [selectedResourceInput]="selectedResource"
+    (onSelectResource)="_onSelectResource($event)"></wide-collection-menu>

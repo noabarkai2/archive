@@ -1,0 +1,28 @@
+<div class="collections-menu-container">
+  <div class="gradient-section-header section-border">
+    <div class="row">
+      <p class="section-big-title m-0 col-10">מארזי למידה</p>
+
+      <div class="col-2 x-container" (click)="onCloseMenu()">
+        <img src="assets/feed/icons/green-x.svg" alt="arrow-down-icon" />
+      </div>
+    </div>
+  </div>
+  <div class="section-border">
+    <app-herum-user-progress
+      [title]="'מדד כשירות כללי'"
+    ></app-herum-user-progress>
+  </div>
+
+  <feed-collection-priority-expendable-panel
+    *ngFor="let collectionByPriority of collectionsByPriority"
+    [title]="collectionByPriority.displayName">
+    <feed-collection-status-item
+      class="clickable"
+      *ngFor="let collection of collectionByPriority.collections"
+      [title]="collection.collectionPreview.name"
+      [percentage]="collection.grade"
+      (click)="_onChooseCollection(collection)"
+    ></feed-collection-status-item>
+  </feed-collection-priority-expendable-panel>
+</div>

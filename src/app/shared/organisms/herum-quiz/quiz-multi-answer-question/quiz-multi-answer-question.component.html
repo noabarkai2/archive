@@ -1,0 +1,7 @@
+<div class="answers-container">
+    <p>יש לסמן {{ correctAnswerCount }} תשובות</p>
+    <div class="answer-item" *ngFor="let answer of question.answers">
+        <app-herum-checkbox (checked)="_onAnswersChange(answer)"></app-herum-checkbox>
+        <p class="answer-text">{{ answer.content }}</p>
+    </div>
+</div>

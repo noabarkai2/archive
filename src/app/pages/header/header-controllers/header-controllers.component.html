@@ -1,0 +1,22 @@
+<div class="controllers-container">
+  <!-- <div class="icon-box"  mat-button [matMenuTriggerFor]="afterMenu" #menuTrigger> -->
+  <div class="icon-box" (click)="showNotebook=!showNotebook">
+    <img src="assets/header/note.svg" alt="note-icon" />
+  </div>
+  <!-- <mat-menu #afterMenu="matMenu" xPosition="after" class="matMenu"> -->
+  <div (click)="preventMenuClose($event)"  *ngIf="showNotebook" (keydown)="preventMenuClose($event)">
+    <notebook-dialog (keydown)="preventMenuClose($event)"></notebook-dialog>
+  </div>
+  <!-- </mat-menu> -->
+
+  <!-- <button mat-button [matMenuTriggerFor]="afterMenu" #menuTrigger>Menu</button> -->
+
+  <app-herum-select
+    [options]="roles"
+    [disabled]="false"
+    [title]="'ישראל ישראלי'"
+    [iconPath]="'/assets/general/user.svg'"
+  ></app-herum-select>
+
+  <div class="clickable-text">התנתקות</div>
+</div>

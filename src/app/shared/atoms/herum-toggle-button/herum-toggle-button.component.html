@@ -1,0 +1,8 @@
+<div class="toggle-container">
+    <div *ngFor="let option of options; let i = index" [class.border-right]="isBorderNeeded(i)">
+        <button [value]="i" (click)="toggleOption(i)" class="small"
+            [class.primary]="isOptionSelected(i)" [disabled]="disabled">
+            {{option}}
+        </button>
+    </div>
+</div>

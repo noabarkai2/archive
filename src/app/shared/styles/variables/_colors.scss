@@ -1,0 +1,45 @@
+:root {
+    --text-color: #424251;
+    --light-text-color: #ffffff;
+    --disabled-text-color: #C8C5C5;
+
+    --hover-color: #f1f3f9;
+
+    --title-color: #131A17;
+
+    --primary-color: linear-gradient(13deg, #095D57 0%, #2BB982 66%, #44F0BB 100%);
+    --lighter-primary-color: linear-gradient(26deg, #539E99 0%, #57D6A5 49%, #ABFBE2 100%);
+    --darker-primary-color: linear-gradient(26deg, #09433F 0%, #1D8A60 49%, #2FCB9B 100%);
+    --section-header-color: transparent linear-gradient(177deg, #095D57 0%, #2BB982B8 52%, #44F0BB00 100%) 0% 0% no-repeat padding-box;
+
+    --secondary-color: #7A9AAC;
+    --lighter-secondary-color: #93B0C1;
+    --darker-secondary-color: #5E7D8E;
+
+    --panel-secondary-color: linear-gradient(162deg, #87FF19 0%, #62D69A 52%, #EFA4FE 100%);
+    --panel-secondary-color-low-opacity: linear-gradient(162deg, #88ff198c 0%, #62d69a8c 52%, #efa4fe70 100%);
+
+    --icons-color: #26C593;
+    --icons-color-light-1: #26C59380;
+    --icons-color-light-2: #26C59333;
+    --icons-color-as-bg: #157E3112;
+
+    --disable-color: linear-gradient(5deg, #C5C7C7 0%, #ffffff 100%);
+    --disable-color-checkbox: linear-gradient(28deg, #C5C7C7 0%, #ffffff 100%);
+
+    --popup-panel-color: #1c274c86;
+
+    --chips-divider-color: #CFD7E9;
+    --borders-and-lines-color: #A0AFD4;
+
+    --panels-fill-color: #F4F4F7;
+
+    --error-color: #FF0A4D;
+
+    --light-background-color: #FFFFFF;
+    --darker-light-background-color: #1609290d;
+
+    --tooltip-background-color: #1C274C;
+
+    --inactive-border-color: #A0AFD41A;
+}

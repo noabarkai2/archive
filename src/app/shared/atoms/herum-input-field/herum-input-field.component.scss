@@ -1,0 +1,77 @@
+@import '../../styles/mixin';
+
+input {
+    border: 1px solid var(--inactive-border-color);
+    padding: var(--btn-padding-size);
+    border-radius: var(--btn-border-radius-size);
+	font-size: var(--standard-font-size);
+    @include boxShadow;
+}
+
+input:hover {
+    border-color: var(--icons-color-light-2);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--icons-color-light-1);
+    box-shadow: 0 0 5px var(--icons-color-light-1);
+}
+
+input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input::placeholder {
+    color: var(--disabled-text-color);
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container .icon {
+    position: absolute;
+    left: 12px;
+    cursor: pointer;
+}
+
+.input-container input {
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 12px;
+}
+
+.input-container input:disabled {
+    background-color: #eee;
+}
+
+span {
+    justify-content: center;
+    display: flex;
+}
+
+img {
+    height: 16px;
+}
+
+.small-icon {
+    height: 12px;
+}
+
+.right {
+    justify-content:right;
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.error-input,.error-input:focus {
+    border-color: var(--error-color);
+}

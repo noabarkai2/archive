@@ -1,0 +1,8 @@
+<div class="answers-container">
+    <div class="answer-item herum-card" *ngFor="let answer of question.answers"
+        [ngClass]="_getAnswerClass(answer)" (click)="_onAnswersChange(answer)">
+        <p class="answer-text">
+            {{ answer.content }}
+        </p>
+    </div>
+</div>

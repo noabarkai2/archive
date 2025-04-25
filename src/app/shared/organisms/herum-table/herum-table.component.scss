@@ -1,0 +1,147 @@
+@import "~ag-grid-community/styles/ag-grid.css";
+@import "~ag-grid-community/styles/ag-theme-alpine.css";
+
+::ng-deep.ag-center-cols-container {
+  width: 100% !important;
+}
+
+::ng-deep.ag-header-container {
+  width: 100% !important;
+}
+
+::ng-deep.ag-theme-alpine .ag-row {
+  border-bottom: none;
+}
+
+::ng-deep.ag-theme-alpine .ag-body-viewport {
+  border-bottom: none;
+}
+
+::ng-deep.ag-theme-alpine .ag-row {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.ag-theme-alpine .ag-body-viewport {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+::ng-deep.ag-theme-quartz {
+  --ag-grid-size: 5px;
+  --ag-list-item-height: 20px;
+}
+
+::ng-deep.ag-header {
+  background: linear-gradient(0deg, rgba(0, 212, 255, 0) 0%, rgba(38, 197, 147, 0.4510548107255521) 100%);
+  color: #333;
+  font-weight: bold;
+  height: 20px;
+  border-bottom: none;
+}
+
+::ng-deep.ag-theme-alpine {
+  --ag-cell-horizontal-border: '#333';
+  --ag-header-column-separator-display: block;
+}
+
+::ng-deep .ag-header-cell,
+::ng-deep .ag-header-group-cell {
+  border-right: 1px solid #ccc;
+  height: 50px !important;
+}
+
+::ng-deep.ag-rtl .ag-cell {
+  border-left: 1px solid #ccc;
+}
+
+::ng-deep .ag-header-cell-label,
+::ng-deep .ag-cell-value {
+  padding-right: 8px;
+  justify-content: start;
+  display: flex;
+}
+
+::ng-deep.ag-theme-alpine {
+  .ag-row-selected {
+    background-color: #7a9aac47;
+  }
+
+  .ag-row-even.selected-row,
+  .ag-row-odd.selected-row {
+    background-color: #7a9aac34;
+  }
+
+  .ag-row-selected::before {
+    background-color: transparent;
+  }
+}
+
+::ng-deep.ag-cell:not(:first-child) {
+  border: none !important;
+  border-left: 1px solid #ccc !important;
+}
+
+::ng-deep.ag-header-cell:not(:first-child){
+  padding: 0;
+}
+
+::ng-deep.ag-header-cell.ag-column-first {
+  border: none !important;
+}
+
+::ng-deep.ag-cell-value.ag-cell.ag-column-last {
+  border: none !important;
+}
+
+::ng-deep.ag-wrapper.ag-picker-field-wrapper.ag-picker-collapsed:focus-within {
+  border-color: var(--icons-color) !important;
+  box-shadow: none !important;
+}
+
+::ng-deep.ag-picker-field-wrapper.ag-picker-has-focus,
+.ag-picker-field-wrapper:focus-within {
+  border-color: var(--icons-color) !important;
+  box-shadow: none !important;
+}
+
+::ng-deep.ag-icon-small-down::before {
+  color: var(--icons-color) !important;
+}
+
+::ng-deep.ag-checkbox-input-wrapper::after {
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::ng-deep.ag-checkbox-input-wrapper.ag-checked::after {
+  color: var(--secondary-color);
+}
+
+::ng-deep.ag-root-wrapper.ag-layout-normal{
+  border-radius: 8px;
+}
+
+.edit-row-cell{
+  width: 100% !important;
+}
+
+::ng-deep edit-row {
+  width: 100% !important;
+}
+
+::ng-deep.ag-icon-menu::before {
+  color: var(--icons-color) !important;
+}
+
+::ng-deep.ag-cell-inline-editing {
+  padding: 0;
+}
+
+ag-grid-angular{
+  height: 900px;
+}

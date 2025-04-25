@@ -1,0 +1,107 @@
+@mixin step($color) {
+    .step-counter {
+        border: 3px solid $color;
+        background-color: white;
+
+        .current-inner-circle {
+            background-color: $color;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--inactive-border-color);
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--inactive-border-color);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+}
+
+.stepper-item:not(.completed) {
+    @include step(var(--inactive-border-color));
+}
+
+.stepper-item.active {
+    font-weight: bold;
+    @include step(var(--icons-color));
+}
+
+.stepper-item.active::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--icons-color);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepper-item.completed .step-counter {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--icons-color);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepper-item:first-child::after {
+    content: none;
+}
+
+.stepper-item:last-child::before {
+    content: none;
+}

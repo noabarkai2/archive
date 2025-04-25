@@ -1,0 +1,14 @@
+<div class="controllers-container">
+    <img src="assets/general/logo.png" alt="logo" class="logo">
+  
+    <a
+      *ngFor="let link of routerLinksToRoles"
+      class="link-item"
+      [routerLink]="['/', link.routeName]"    
+      routerLinkActive="active"
+    >
+      <div class="controller pb-2 pt-2">
+        <span class="link-text">{{ link.routeDisplayName }}</span>
+      </div>
+    </a>
+  </div>

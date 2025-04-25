@@ -1,0 +1,15 @@
+<div class="resource-item-container">
+    <div class="small-flex-item center section-title h-100">{{ resource.positionInCollection }}</div>
+    <div class="small-flex-item center h-100">
+        <img [src]="resourceTypeIconPath" alt="resource-icon" class="resource-icon" />
+    </div>
+    <div class="large-flex-item h-100" >
+        <span class="section-title" [ngClass]="{'active': isActive}">{{ resource.resourcePreview.title }}</span><br>
+        <div class="description-container" [ngClass]="{'active': isActive}">
+            {{ resource.resourcePreview.description }}
+        </div>
+    </div>
+    <div class="small-flex-item center h-100">
+        <img *ngIf="resource.subscriptionStatus !== 0" [src]="statusIconPath" alt="status-icon" class="status-icon" />
+    </div>
+</div>

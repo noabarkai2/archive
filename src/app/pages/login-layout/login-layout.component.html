@@ -1,0 +1,45 @@
+<login-page-animated-container>
+
+  <div class="col-6 column center p-2 content-container">
+    <!-- לוגו וכותרות -->
+    <div class="row center mb-4">
+      <img src="/assets/loginPage/icons/aman.png" alt="logo" class="primary-icon" />
+      <h4 class="logo-text">בית הספר הדיגיטלי לחירום</h4>
+    </div>
+    <div class="row center mb-4">
+      <h1>הדרך לכשירות מתחילה כאן...</h1>
+      <p>לימודי מודיעין והכשרות בכל מקום ובכל זמן</p>
+    </div>
+
+    <div class="herum-card p-4">
+      <!-- רק מציגים את רכיב ההתחברות או ההרשמה -->
+      <sign-in *ngIf="isSignInMode"></sign-in>
+      <sign-up *ngIf="!isSignInMode"></sign-up>
+
+      <!-- קישור לתנועה בין מצבי SignIn/SignUp -->
+      <p class="mt-3 mb-0 text-center">
+        <ng-container *ngIf="isSignInMode">
+          אין לך משתמש קיים?
+          <a class="clickable-text" (click)="switchMode()">להרשמה</a>
+        </ng-container>
+        <ng-container *ngIf="!isSignInMode">
+          כבר יש לך משתמש?
+          <a class="clickable-text" (click)="switchMode()">להתחברות</a>
+        </ng-container>
+      </p>
+    </div>
+
+    <!-- אייקוני כניסה חיצוניים -->
+    <div class="center row icons-container mt-4">
+      <a *ngFor="let loginIcon of loginIconsList" class="icon">
+        <img [src]="loginIcon.image" />
+      </a>
+    </div>
+  </div>
+
+  <!-- צד ימין (לאנימציה/ווידאו) -->
+  <div class="col-6">
+    <!-- כאן השארת כל תוכן העיצוב הרצוי -->
+  </div>
+
+</login-page-animated-container>

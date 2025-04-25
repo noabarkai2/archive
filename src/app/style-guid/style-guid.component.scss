@@ -1,0 +1,52 @@
+@import '../../app/shared/styles/mixin';
+@include customTooltip;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    flex-direction: column;
+}
+
+.icon-example {
+    position: relative;
+    margin: 50px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+.colors-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    gap: 36px;
+}
+
+
+
+
+
+.progress-bar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(closest-side, white 79%, transparent 80% 100%),
+      conic-gradient(var(--icons-color) 65%, pink 0);    
+  }

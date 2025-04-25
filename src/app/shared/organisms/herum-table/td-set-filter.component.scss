@@ -1,0 +1,12 @@
+.ag-set-filter-item {
+    gap: 8px;
+}
+
+::ng-deep.ag-menu {
+    border-radius: var(--btn-border-radius-size)!important;
+}
+
+
+.select-all-bold {
+    font-weight: bold;
+}

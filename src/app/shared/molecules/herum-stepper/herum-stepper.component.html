@@ -1,0 +1,26 @@
+<div class="stepper-wrapper">
+    <ng-container *ngFor="let step of stepper">
+        <ng-container [ngSwitch]="step.status">
+            <div *ngSwitchCase="0" class="stepper-item completed">
+                <div class="step-counter">
+                    <img src="assets/shared/icons/stepper/white-v.svg" width="15px" alt="checked" />
+                </div>
+                <div class="step-name">{{step.label}}</div>
+            </div>
+
+            <div *ngSwitchCase="1" class="stepper-item active">
+                <div class="step-counter">
+                    <div class="current-inner-circle"></div>
+                </div>
+                <div class="step-name">{{step.label}}</div>
+            </div>
+
+            <div *ngSwitchCase="2" class="stepper-item">
+                <div class="step-counter">
+                    <div class="current-inner-circle"></div>
+                </div>
+                <div class="step-name">{{step.label}}</div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

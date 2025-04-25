@@ -1,0 +1,24 @@
+<div class="dropdown internal" dir="rtl">
+    <button class="dropbtn internal" (click)="toggleDropdown()" 
+        [ngClass]="{'open-dropbtn': show(), 'displayed-selected-option':selectedOption }"
+        [ngStyle]="{'padding': title ? '4px' : '16px' }">
+        <ng-container *ngIf="title == ''">
+            {{selectedOption ? selectedOption : 'בחר/י...'}}
+        </ng-container>
+
+        <div class="selected-option-container internal" *ngIf="title">
+            <span class="title internal" >
+                <img *ngIf="iconPath" [src]="iconPath" alt="icon" class="icon">
+                {{title}}
+            </span><br>
+            <span class="selected-option internal">{{selectedOption ? selectedOption : title}}</span>
+        </div>
+    </button>
+
+    <div id="myDropdown" [ngClass]="{'dropdown-content': true, 'show': show()}">
+        <a *ngFor="let option of options; let i=index" (click)="selectOption(i)"
+            [ngClass]="{'selected': isSelectedOption(i)}">{{option}}</a>
+    </div>
+
+    <span class="shevron-icon" [ngClass]="{'rotate-chevron': show()}"><i class="fa-solid fa-chevron-down"></i></span>
+</div>

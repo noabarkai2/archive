@@ -1,0 +1,20 @@
+.collections-menu-container {
+    min-width: 300px;
+}
+
+.gradient-section-header {
+    padding: 20px 10px;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(0deg, rgba(0,212,255,0) 0%, rgba(38,197,147,0.4510548107255521) 100%);
+}
+
+.x-container {
+    display: flex;
+    justify-content: center;
+    align-items:  start;
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+}

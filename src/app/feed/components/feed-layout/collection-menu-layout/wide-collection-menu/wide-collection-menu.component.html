@@ -1,0 +1,16 @@
+<div class="wide-menu-container">
+
+  <div class="section-border">
+    <app-herum-user-progress [title]="'כשירות במארז'" [percentage]="selectedCollection.grade"></app-herum-user-progress>
+  </div>
+
+  <div class="p-4">
+    <p class="section-title">
+      רשימת השיעורים
+    </p>
+
+    <feed-resource-item *ngFor="let resource of selectedCollection.resourceSubscriptions" 
+    [resource]="resource" (click)="_onSelectResource(resource)" 
+      [isActive]="resource.positionInCollection == selectedResource.positionInCollection"></feed-resource-item>
+  </div>
+</div>

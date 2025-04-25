@@ -1,0 +1,40 @@
+@import 'src/app/shared/styles/mixin';
+
+.comments-container {
+    max-width: 400px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.comment {
+    @include boxShadow;
+    border-radius: var(--btn-border-radius-size);
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0);
+}
+
+.comment:hover {
+    border: 1px solid var(--icons-color-light-2);
+}
+
+.description {
+    width: fit-content;
+}
+
+.comments-title{
+    font-size: 14px;
+    display: flex;
+}
+
+.comments-title::before {
+    content: url('../../../../../assets/general/comment-icon.svg');
+    margin: 3px;
+    margin-right:0 ;
+}
+
+.left {
+    display: flex;
+    justify-content: left;
+}

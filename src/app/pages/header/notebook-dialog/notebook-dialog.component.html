@@ -1,0 +1,21 @@
+<div class="notebook-container" cdkDrag (keydown)="handleMenuKeydown($event)">
+    <div class="header-container">
+        <p class="my-notebook-title">המחברת שלי</p>
+
+        <div class="tabs-container">
+            <div *ngFor="let note of notes; let i=index" class="tab-item" (click)="activeNoteIndex = i" [ngClass]="{'active-tab': activeNoteIndex == i }">
+                <div class="note-title-container" >
+                    <p class="note-title">{{removeHtmlTags(note.content)}}</p>
+                    <img src="../../../../assets/general/secondary-x.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <quill-editor #quillEditor [(ngModel)]="notes[activeNoteIndex].content" placeholder="הקלד\י כאן" [modules]="quillConfig"
+        (onSelectionChanged)="onSelectionChanged()" (onContentChanged)="onContentChanged()" style="height: 300px;"></quill-editor>
+
+    <div class="buttons-container">
+        <herum-button [size]="'fit'" [type]="'primary'" [disabled]="!isContentChanged" (click)="_saveNotes()">שמור</herum-button>
+    </div>
+</div>

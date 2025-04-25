@@ -1,0 +1,33 @@
+<!-- <div class="quiz-header-container">
+    <p class="quiz-header-title">רשימת שאלות </p>
+    <div class="question-list-container">
+        <div *ngFor="let question of quizData.questions; let i = index" class="question-item"
+            (click)="_onSelectQuestion(i)">
+            <div class="question-number" [ngClass]="_getQuestionStatus(question,i)">{{i + 1}}</div>
+        </div>
+    </div>
+</div> -->
+
+<div class="quiz-header-container">
+    <div class="top-buttons-conatiner">
+        <p class="quiz-header-title">רשימת שאלות </p>
+        <p class="quiz-header-title clickable-text">חזרה למסך סיכום</p>
+    </div>
+    <div class="question-list-container"> 
+        <div class="rotate" (click)="_previousViewIndex()" *ngIf="isViewIndexNeeded">
+            <img src="../../../../../assets/feed/icons/quiz/greyHeaderArrow.svg" *ngIf="startIndexOfQuestions + viewIndex == 0" />
+            <img src="../../../../../assets/feed/icons/quiz/greenHeaderArrow.svg" class="clickable" *ngIf="startIndexOfQuestions + viewIndex != 0" />
+        </div>
+
+        <div *ngFor="let question of slicedQuestionsList"
+            class="question-item" (click)="_onSelectQuestion(question.index)">
+            <div class="question-number" [ngClass]="_getQuestionStatus(question, question.index)">{{question.index + 1}}
+            </div>
+        </div>
+
+        <div (click)="_nextViewIndex()" *ngIf="isViewIndexNeeded">
+            <img src="../../../../../assets/feed/icons/quiz/greyHeaderArrow.svg" *ngIf="endIndexOfQuestions + viewIndex  >= quizData.questions.length" />
+            <img src="../../../../../assets/feed/icons/quiz/greenHeaderArrow.svg" class="clickable" *ngIf="endIndexOfQuestions + viewIndex < quizData.questions.length" />
+        </div>
+    </div>
+</div>

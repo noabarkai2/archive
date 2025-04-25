@@ -1,0 +1,74 @@
+// @import  "node_modules/quill/dist/quill.core.css";
+// @import  "node_modules/quill/dist/quill.bubble.css";
+// @import  "node_modules/quill/dist/quill.snow.css";
+// @import  "node_modules/quill-emoji/dist/quill-emoji.css";
+// @import  "node_modules/quill-mention/dist/quill.mention.min.css";
+
+
+.my-notebook-title {
+    color: #095D57;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.header-container {
+    background: linear-gradient(0deg, rgba(0, 212, 255, 0) 0%, rgba(38, 197, 147, 0.4510548107255521) 100%);
+    padding-right: 10px;
+    padding-top: 4px;
+}
+
+.tabs-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-item {
+    border-radius: var(--btn-border-radius-size) var(--btn-border-radius-size) 0px 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 8px;
+}
+
+.note-title-container {
+    p {
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    display: flex;
+    gap: 8px;
+    max-width: 100px;
+}
+
+.active-tab {
+    background-color: #fff;
+}
+
+::ng-deep.ql-editor {
+    text-align: right;
+}
+
+::ng-deep.ql-container {
+    height: 300px!important;
+}
+
+::ng-deep.ql-container.ql-snow {
+    border: none!important;
+}
+
+:ng-deep.ql-picker-label{
+    direction: ltr!important;
+}
+
+::ng-deep.ql-font ql-picker ql-expanded{
+    direction: ltr!important;
+}

@@ -1,0 +1,9 @@
+<mat-form-field class="select-container" style="width: 400px">
+    <input class="pr-0 pl-0" matInput dir="rtl" [matAutocomplete]="auto" [formControl]="yourFormControl">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+        </mat-option>
+    </mat-autocomplete>
+    <span class="shevron-icon"><i class="fa-solid fa-chevron-down"></i></span>
+</mat-form-field>

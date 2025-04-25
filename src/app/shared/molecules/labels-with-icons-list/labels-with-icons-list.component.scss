@@ -1,0 +1,16 @@
+.label-item {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    padding: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--chips-divider-color);
+}
+
+.label-item:last-child {
+    border-bottom: none;
+}
+
+p{
+    margin: 0;
+}

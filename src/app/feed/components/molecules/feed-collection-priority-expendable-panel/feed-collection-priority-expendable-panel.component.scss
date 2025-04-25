@@ -1,0 +1,34 @@
+.collection-priority-expendable-panel-container {
+    padding-right: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.expendable-panel-title {
+    cursor: pointer;
+}
+.collection-priority-expendable-panel-container .expendable-panel-title::before {
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    right: 15px;
+    border-top: 2px solid var(--icons-color);
+    border-right: 2px solid var(--icons-color);
+    transform-origin: center;
+    transition: transform 0.3s ease; 
+}
+
+.open::before {
+    content: url("/src/assets/general/open-chevron.png");
+    top: 3px;
+    transform: rotate(135deg);
+}
+
+.closed::before {
+    content: url("/src/assets/general/closed-chevron.png");
+    top: 5px;
+    transform: rotate(225deg);
+}

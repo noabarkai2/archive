@@ -1,0 +1,18 @@
+# Angular build / cache
+.angular/
+dist/
+
+# Node
+node_modules/
+
+# OS / editor junk
+*.DS_Store
+__MACOSX/
+
+# Visual Studio / .NET
+**/bin/
+**/obj/
+
+# IDEs
+.vs/
+.idea/

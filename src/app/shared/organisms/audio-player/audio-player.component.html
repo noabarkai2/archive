@@ -1,0 +1,45 @@
+<div class="audio-player">
+    <div class="controls d-flex align-items-center w-100 ">
+        <div class="skip-forward" (click)="skipBackward()">
+          <div class="center-absls">10</div>
+        </div> 
+        
+        <div class="playpause-button">
+            <button *ngIf="!isPlaying" (click)="onPlay()" class="play-btn">
+              <i class="fa fa-play"></i>
+            </button>	
+            <img *ngIf="isPlaying" (click)="onPause()" src="./audio-images/Pause-audio.svg" alt="Pause" />
+        </div> 
+  
+        <div class="skip-backward" (click)="skipForward()">
+          <div class="center-absls">10</div>
+        </div>
+    </div>
+  
+    <div class="audio-title grey-small-text my-2 text-center ">{{text }}</div>
+  
+    <div class="d-flex w-100 align-items-center px-3 pb-3">
+      <div class="col-2 p-0" (click)="togglePlaybackSpeed()">
+        <div class="playback-speed">
+          <select style="pointer-events: none;" id="playbackSpeed" class="border-0" [(ngModel)]="selectedPlaybackSpeed" (change)="changePlaybackSpeed(selectedPlaybackSpeed)">
+            <option *ngFor="let speed of playbackSpeedOptions" [value]="speed">{{ speed }}x</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="progress-container col-6" [ngStyle]="{'margin-left:20px': true}" (mousedown)="onProgressContainerMouseDown($event)" passive="false"> 
+        <div class="progress-bar" [style.width]="calculateProgress() + '%'" ></div>
+        <!-- <div class="draggable-circle" *ngIf="!isRtl" [style.left]="calculateProgress() + '%'" passive="false"></div>
+        <div class="draggable-circle" *ngIf="isRtl" [style.right]="calculateProgress() + '%'" passive="false"></div> -->
+        <div class="draggable-circle" [ngStyle]="{ 'right.%': calculateProgress()}" passive="false"></div>
+      </div>
+
+      <div class="time-display grey-small-text col-4 p-0 mt-0">
+          {{ totalTime | timeFormat }} / {{ currentTime | timeFormat }}  
+      </div>
+    </div>
+  </div>
+  <br>
+  <button (click)="_getAllGroups()">get groups</button>
+
+  <button (click)=" joinGroup(group)" *ngFor="let group of (groups$ | async)">{{group}}</button>

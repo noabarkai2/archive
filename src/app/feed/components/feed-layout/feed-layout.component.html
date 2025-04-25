@@ -1,0 +1,39 @@
+<div class="collections-container">
+    <mat-drawer-container dir="rtl" class="collections-menu-container" autosize>
+        <mat-drawer #collectionsMenu class="collections-sidenav" mode="over" hasBackdrop="false">
+            <app-collections-menu-layout (closeMenu)="collectionsMenu.toggle()"
+                (onChooseCollection)="_onSelectCollection($event); collectionsMenu.toggle()"
+                [subscribedCollections]="userCollections.subscribedCollections">
+            </app-collections-menu-layout>
+        </mat-drawer>
+
+        <div class="example-sidenav-content">
+            <div class="collection-menu-btn" (click)="collectionsMenu.toggle()">
+                <img src="assets/feed/icons/hamburger.svg" alt="menu-icon">
+            </div>
+ 
+            <herum-page-header [title]="selectedCollectionSubscription.collectionPreview.name"
+                [description]="selectedCollectionSubscription.collectionPreview.description"></herum-page-header>
+
+            <mat-drawer-container dir="rtl" class="collection-menu-container" autosize>
+                <mat-drawer #collectionMenu class="example-sidenav" mode="side" hasBackdrop="false" opened="true">
+                    <app-collection-menu-layout 
+                        [selectedCollection]="selectedCollectionSubscription"
+                        [selectedResourceInput]="selectedResourceSubscription"
+                        [isWideMode]="isWideMode"
+                        (onSelectResource)="_onSelectResource($event);"
+                    ></app-collection-menu-layout>
+                </mat-drawer>
+
+                <div class="example-sidenav-content">
+                    <div class="collection-menu-btn small-btn" (click)="isWideMode=!isWideMode">
+                        <img src="assets/feed/icons/white-chevron.svg" class="chevron"
+                        [ngClass]="{'rotate-chevron': isWideMode}" alt="menu-icon">
+                    </div>
+
+                    <app-resource-layout [resource]="selectedResource"></app-resource-layout>
+                </div>
+            </mat-drawer-container>
+        </div>
+    </mat-drawer-container>
+</div>

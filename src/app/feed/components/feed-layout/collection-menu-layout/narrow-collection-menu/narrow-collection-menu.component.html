@@ -1,0 +1,13 @@
+<div class="narrow-container">
+  <p class="narrow-title">רשימת שיעורים</p>
+  <div
+    *ngFor="let lesson of selectedCollection.resourceSubscriptions"
+    class="lesson-item"
+    [ngClass]="{
+      'current-lesson':
+        lesson.positionInCollection == selectedResource.positionInCollection
+    }"
+  >
+    <span>{{ lesson.positionInCollection }}</span>
+  </div>
+</div>

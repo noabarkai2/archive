@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "./app/shared/styles/variables/_colors";
+
+@import './app/shared/styles/mixin';
+@import "~ag-grid-community/styles/ag-grid.css";
+@import "~ag-grid-community/styles/ag-theme-alpine.css";
+@import "~ag-grid-community/styles/ag-theme-balham.css";
+@import '~animate.css/animate.css';
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../src/assets/fonts/Heebo/Heebo-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+* {
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 0px;
+    font-size: var(--standard-font-size);
+    color: var(--text-color);
+    direction: rtl;
+    
+}
+
+.tooltip {
+    position: absolute;
+}
+
+// ::ng-deep.mat-tooltip {
+//     background-color: var(--tooltip-background-color) !important;
+//     color: var(--light-background-color) !important;
+//     padding: var(--tooltip-padding-size) !important;
+//     border-radius: var(--btn-border-radius-size) !important;
+//     font-size: 14px!important;
+//     @include boxShadow;
+//   }
+
+// ::ng-deep mat-tooltip mat-tooltip-show{
+//     background-color: var(--tooltip-background-color) !important;
+//     color: var(--light-background-color) !important;
+//     padding: var(--tooltip-padding-size) !important;
+//     border-radius: var(--btn-border-radius-size) !important;
+//     font-size: 14px!important;
+//     @include boxShadow;
+// }
+
+.fa-chevron-down {
+    color: var(--icons-color) !important;
+}
+
+.herum-card {
+    @include boxShadow;
+    background-color: var(--light-background-color);
+    border-radius: 8px;
+    max-width: 350px;
+}
+
+// .center {
+//     justify-content: center;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+.icon-box {
+    @include boxShadow;
+    padding: 12px;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+//--------------typography
+
+.clickable-text {
+    color: var(--icons-color);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    font: normal normal medium 18px/40px;
+}
+
+h2 {
+    font: normal normal medium 16px/40px;
+}
+
+h3 {
+    font: normal normal medium 14px/40px !important;
+}
+
+.text-disabled {
+    color: var(--disable-color);
+}
+
+p{
+    margin: 0;
+}
+
+.section-border {
+    border-bottom: 2px solid var(--chips-divider-color);
+}
+
+.section-big-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.section-title{
+    font: normal normal medium 16px/40px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font: normal normal medium 14px/40px;
+    font-weight: 700;
+}
+
+.section-description{
+    font: normal normal normal 14px/40px;
+    font-weight: 400;
+}

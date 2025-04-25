@@ -1,0 +1,33 @@
+@import '../../styles/mixin';
+
+.toggle-container {
+    display: flex;
+    background-color: var(--panels-fill-color);
+    width: fit-content;
+    padding: 4px;
+    border-radius: var(--btn-border-radius-size);
+    transition: background-color 4.3s ease-in-out;
+    @include boxShadow;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-color);
+    border: none;
+    background-color: transparent;
+    transition: background-color 4.3s ease-in-out;
+
+    &.primary {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+}
+
+.small {
+    box-shadow: none !important;
+}
+
+.border-right {
+    border-right: 1px solid var(--chips-divider-color);
+}

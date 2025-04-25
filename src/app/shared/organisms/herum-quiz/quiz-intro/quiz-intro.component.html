@@ -1,0 +1,16 @@
+<div class="quiz-container">
+  <p class="quiz-title">{{ quizData.resourceName }}</p>
+  <br />
+  <p>
+    במבחן זה <b>{{ quizData.questions.length }}</b> שאלות
+  </p>
+  <p *ngIf="quizData.minGrade > 0">
+    <b>ציון מינימלי הנדרש למעבר: </b>{{ quizData.minGrade }}
+  </p>
+  <p>
+    זהו <b>נסיון המענה ה - {{ quizData.attemptsCount }}</b> שלך על מבחן.
+  </p>
+  <p>עליך לענות על כל השאלות</p>
+  <br />
+  <p>בהצלחה!</p>
+</div>

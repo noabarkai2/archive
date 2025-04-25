@@ -1,0 +1,36 @@
+<div class="ag-filter">
+  <div>
+    <div class="ag-filter-body-wrapper">
+      <div ref="ag-filter-loading" class="loading-filter ag-hidden">
+        Loading...
+      </div>
+      <div>
+        <div id="richList" class="ag-set-filter-list">
+          <div class="ag-virtual-list-viewport">
+            <div class="ag-virtual-list-container" [attr.style.height]="containerHeight">
+              <div style="line-height: 28px;">
+                <label class="ag-set-filter-item">
+                  <div class="ag-filter-checkbox">
+                    <app-herum-checkbox [isChecked]="isEverythingSelected"
+                      (checked)="toggleEverything()"></app-herum-checkbox>
+                  </div>
+                  <span class="ag-filter-value select-all-bold">בחר הכל</span>
+                </label>
+              </div>
+              
+              <div style="line-height: 28px;" *ngFor="let item of (onFilterValuesChanged$ | async)">
+                <label class="ag-set-filter-item">
+                  <div class="ag-filter-checkbox">
+                    <app-herum-checkbox [isChecked]="selectedValuesMap.hasOwnProperty(item)"
+                      (checked)="toggleItem(item)"></app-herum-checkbox>
+                  </div>
+                  <span class="ag-filter-value">{{ item }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

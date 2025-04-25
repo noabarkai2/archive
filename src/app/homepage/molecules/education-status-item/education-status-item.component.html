@@ -1,0 +1,18 @@
+<div class="education-status-container"
+    [ngStyle]="{ 'background-color': 'rgba(' + _hexToRgb(educationStatus.color) + ', 0.3)' }">
+    <div class="icon-container" [ngStyle]="{ 'background-color': educationStatus.color }">
+        <img [src]="educationStatus.iconPath" alt="icon" />
+    </div>
+
+    <p class="current-value-text" [ngStyle]="{ 'color': educationStatus.color }">
+        {{ educationStatus.currentValue }}
+    </p>
+
+    <p class="current-value-type" [ngStyle]="{ 'color': educationStatus.color }">
+        {{ educationStatus.type }}
+    </p>
+
+    <p class="total-value-text" [ngStyle]="{ 'color': educationStatus.color }">
+        {{ totalValueText }}
+    </p>
+</div>

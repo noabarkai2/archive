@@ -1,0 +1,6 @@
+<div class="options-container">
+  <label *ngFor="let option of options">
+    <input (click)="_onSelect(option)" type="radio" name="e" />
+    {{ option.name }}
+  </label>
+</div>

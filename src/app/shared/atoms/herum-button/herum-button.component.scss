@@ -1,0 +1,105 @@
+@import '../../styles/mixin';
+
+button {
+    padding: var(--btn-padding-size);
+    width: 100%;
+    border-radius: var(--btn-border-radius-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: var(--standard-font-size);
+    @include boxShadow;
+}
+
+shadow {
+    @include boxShadow;
+}
+
+.fit { 
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 8px;
+}
+
+.small {
+    min-width: var(--minimum-small-btn-width-size);
+    height: var(--small-btn-height-size);
+}
+
+.medium {
+    min-width: var(--minimum-medium-btn-width-size);
+    height: var(--medium-btn-height-size);
+}
+
+.primary {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.primary:hover {
+    background: var(--lighter-primary-color);
+}
+
+.primary:active {
+    background: var(--darker-primary-color);
+}
+
+.primary[disabled] {
+    background: var(--disable-color);
+    border: var(--disable-color);
+    color: var(--disabled-text-color);
+}
+
+.secondary {
+    background: var(--light-background-color);
+    border: var(--secondary-color) 2px solid;
+    color: var(--secondary-color);
+}
+
+.secondary:hover {
+    background: var(--light-background-color);
+    border: var(--lighter-secondary-color) 2px solid;
+    color: var(--lighter-secondary-color);
+}
+
+.secondary:active {
+    border: var(--darker-secondary-color) 2px solid;
+    color: var(--darker-secondary-color);
+}
+
+.secondary[disabled] {
+    background: var(--disable-color);
+    border: var(--disable-color);
+    color: var(--disabled-text-color);
+}
+
+.ghost {
+    background: transparent;
+    border: transparent;
+    color: var(--secondary-color);
+    box-shadow: none !important;
+}
+
+.ghost:hover {
+    color: var(--lighter-secondary-color);
+}
+
+.ghost:active {
+    background: var(--darker-light-background-color);
+    border: transparent;
+    color: var(--secondary-color);
+    @include boxShadow;
+}
+
+.ghost[disabled] {
+    color: var(--disabled-text-color);
+    background-color: transparent;
+}
+
+[disabled] {
+    cursor: not-allowed;
+    color: var(--disabled-text-color);
+}

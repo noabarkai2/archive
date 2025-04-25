@@ -1,0 +1,35 @@
+@import '../../../../app/shared/styles/mixin';
+
+:host {
+    --fixed-padding: 8px;
+}
+
+.page-header-container {
+    padding: 0px 30px 10px 30px;
+    position: relative;
+    z-index: 2;
+    @include boldBoxShadow;
+}
+
+.section-title {
+    padding: var(--fixed-padding);
+}
+
+.section-description {
+    background-color: var(--icons-color-as-bg);
+    padding: var(--fixed-padding);
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}

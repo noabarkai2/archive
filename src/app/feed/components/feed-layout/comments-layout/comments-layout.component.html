@@ -1,0 +1,35 @@
+<div class="comments-container">
+    <div class="row">
+        <div class="col-8 clickable-text comments-title" (click)="showComments=!showComments">
+            הצג תגובות
+            ({{ getCommentsLength() }})
+        </div>
+        <div class="col-4 pr-4 left" *ngIf="!showComments">
+            <herum-button [type]="'secondary'" [size]="'fit'" (click)="showNewComment=!showNewComment">
+                הוספת תגובה
+            </herum-button>
+        </div>
+    </div>
+    <ng-container *ngIf="!showComments">
+        <div class="comment" *ngIf="!showNewComment">
+            <div class="w-50 mb-1">
+                <p class="section-title m-0">שם מלא</p>
+                <herum-input-field [type]="'text'"></herum-input-field>
+            </div>
+            <p class="section-title m-0">תוכן התגובה</p>
+            <herum-input-field [type]="'text'"></herum-input-field>
+            <div class="w-100 left">
+                <herum-button [size]="'small'" (click)="addNewComment()">
+                    פרסם תגובה
+                </herum-button>
+            </div>
+        </div>
+        <div class="comment" *ngFor="let comment of comments">
+            <p class="w-100 section-subtitle mb-1">{{comment.content}}</p>
+            <div class="row">
+                <p class="description m-0">{{comment.publisherName}}</p> |
+                <p class="description m-0">{{comment.postTime | date:'dd/mm/yyyy'}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

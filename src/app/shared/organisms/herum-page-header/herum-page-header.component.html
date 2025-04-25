@@ -1,0 +1,11 @@
+<div class="page-header-container">
+    <div class="section-title">
+        {{title}}
+    </div>
+    <div class="section-description" *ngIf="!isClosedButtonClicked">
+        <div class="close-btn">
+            <img src="assets/general/secondary-x.svg" alt="close-icon" (click)="isClosedButtonClicked=true">
+        </div>
+        <p [innerHTML]="description"></p>
+    </div>
+</div>

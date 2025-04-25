@@ -1,0 +1,13 @@
+<!-- <label class="container" [class.square]="type === 'indeterminate' && !disabled">
+    <input type="checkbox" class="" [disabled]="disabled" [(ngModel)]="isChecked" (click)="onClick()">
+    <span class="checkmark" [ngClass]="{'disabled': disabled}"></span>
+    <img class="checkmark" src="../../../../assets/shared/icons/V.svg">
+</label>  -->
+
+
+<label class="custom-checkbox-container">
+    <input type="checkbox" class="custom-checkbox-input" [(ngModel)]="isChecked" (click)="onClick()">
+    <span class="custom-checkbox-checkmark">
+        <img src="../../../../assets/shared/icons/V.svg" alt="Custom Checkmark" class="custom-checkmark-image">
+    </span>
+</label>

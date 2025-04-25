@@ -1,0 +1,91 @@
+<form [formGroup]="signUpForm" (ngSubmit)="_onSubmit()">
+  <label>שם פרטי</label>
+  <herum-input-field formControlName="firstName"></herum-input-field>
+  <div
+    *ngIf="
+      signUpForm.get('firstName')?.invalid &&
+      signUpForm.get('firstName')?.touched
+    "
+    class="error"
+  >
+    <span *ngIf="signUpForm.get('firstName')?.errors?.['required']"
+      >נא למלא שם פרטי</span
+    >
+  </div>
+
+  <label>שם משפחה</label>
+  <herum-input-field formControlName="lastName"></herum-input-field>
+  <div
+    *ngIf="
+      signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched
+    "
+    class="error"
+  >
+    <span *ngIf="signUpForm.get('lastName')?.errors?.['required']"
+      >נא למלא שם משפחה</span
+    >
+  </div>
+
+  <label>תעודת זהות</label>
+  <herum-input-field formControlName="personalId"></herum-input-field>
+  <div
+    *ngIf="
+      signUpForm.get('personalId')?.invalid &&
+      signUpForm.get('personalId')?.touched
+    "
+    class="error"
+  >
+    <span *ngIf="signUpForm.get('personalId')?.errors?.['required']"
+      >שדה חובה</span
+    >
+    <span *ngIf="signUpForm.get('personalId')?.errors?.['pattern']"
+      >רק ספרות</span
+    >
+    <span *ngIf="signUpForm.get('personalId')?.errors?.['minlength']"
+      >לפחות 6 ספרות</span
+    >
+  </div>
+
+  <label>מספר אישי</label>
+  <herum-input-field formControlName="militaryId"></herum-input-field>
+  <div
+    *ngIf="
+      signUpForm.get('militaryId')?.invalid &&
+      signUpForm.get('militaryId')?.touched
+    "
+    class="error"
+  >
+    <span *ngIf="signUpForm.get('militaryId')?.errors?.['required']"
+      >שדה חובה</span
+    >
+    <span *ngIf="signUpForm.get('militaryId')?.errors?.['pattern']"
+      >רק ספרות</span
+    >
+    <span *ngIf="signUpForm.get('militaryId')?.errors?.['minlength']"
+      >לפחות 6 ספרות</span
+    >
+  </div>
+
+  <label>מי הפנה אותך?</label>
+  <herum-input-field formControlName="referringUser"></herum-input-field>
+  <div
+    *ngIf="
+      signUpForm.get('referringUser')?.invalid &&
+      signUpForm.get('referringUser')?.touched
+    "
+    class="error"
+  >
+    <span *ngIf="signUpForm.get('referringUser')?.errors?.['required']"
+      >נא למלא מי הפנה אותך</span
+    >
+  </div>
+
+  <herum-button
+    type="primary"
+    [attr.type]="'submit'"
+    [disabled]="signUpForm.invalid"
+    class="w-100 mt-2"
+  >
+    הרשמה לאתר
+  </herum-button>
+</form>

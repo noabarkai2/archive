@@ -1,0 +1,22 @@
+<div class="quiz-container">
+    <div class="col-6">
+        <p class="quiz-title">{{quizData.resourceName}}</p>
+        <br>
+        <div class="grid-container">
+            <div class="left-column">Left Content Row 1</div>
+            <div class="right-column">Right Content Row 1</div>
+            <div class="left-column">Left Content Row 2</div>
+            <div class="right-column">Right Content Row 2</div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="grade-image-container">
+            <ng-container *ngIf="isUserPassTheQuiz">
+                <img src="/src/assets/feed/icons/quiz/happyOwl.svg">
+                <p>כל הכבוד! סיימת את המבחן בהצלחה</p>
+            </ng-container>
+            <img src="/src/assets/feed/icons/quiz/sadOwl.svg" *ngIf="!isUserPassTheQuiz">
+            <p>לא עברת את המבחן בנסיון הזה</p>
+        </div>
+    </div>
+</div>

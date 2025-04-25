@@ -1,0 +1,48 @@
+<div class="pdf-container" style="width: 600px; height: 1000px; margin: 30vh;" #pageContainer>
+  <div class="pdf-controllers">
+    <div class="pdf-controllers-group">
+      עמוד     
+      <img src="/assets/feed/pdfIcons/right.svg" (click)="pageNumber=pageNumber+1">
+      <span class="zoom-value">
+        {{pagesInDocument}}
+      </span>
+      /
+      <span>
+        {{pageNumber}}
+      </span>
+      <img src="/assets/feed/pdfIcons/left.svg" (click)="pageNumber=pageNumber-1">
+    </div>
+    
+    <div class="pdf-controllers-group center">
+      <img src="/assets/feed/pdfIcons/minus.svg" (click)="zoomOut()">
+      <span class="zoom-value">
+        {{zoomPercentage}}%
+      </span>
+      <img src="/assets/feed/pdfIcons/plus.svg" (click)="zoomIn()">           
+    </div>
+  
+    <div class="pdf-controllers-group left">
+      <img src="/assets/feed/pdfIcons/rotate-right.svg" (click)="rotate=rotate - 90" class="mirror-image">
+      <img src="/assets/feed/pdfIcons/rotate-right.svg" (click)="rotate=rotate + 90">
+      <img src="/assets/feed/pdfIcons/full-screen.svg" (click)="openFullScreen()">
+    </div>
+  </div>
+
+  <pdf-viewer #pdfViewer [src]="'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf'" [zoom]="zoomValue"
+    [zoom-scale]="'page-width'" [page]="pageNumber" [rotation]="rotate" (text-layer-rendered)="onLoadComplete($event)"
+    (pageChange)="onPageChange($event)"></pdf-viewer>
+</div>
+
+
+
+<!-- <ngx-extended-pdf-viewer [src]="'../../../../assets/fff.pdf'" [useBrowserLocale]="true" style="width: 500px; height: 50vh;"></ngx-extended-pdf-viewer> -->
+
+
+
+<!-- <div class="content-wrapper">
+    <ejs-pdfviewer id="pdfViewer"
+        [documentPath]='document'
+        [resourceUrl]='resource' 
+        style="height:640px;display:block">
+    </ejs-pdfviewer>
+ </div> -->

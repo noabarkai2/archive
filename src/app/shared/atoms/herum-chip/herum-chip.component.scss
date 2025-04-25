@@ -1,0 +1,26 @@
+@import '../../styles/mixin';
+
+.herum-chip-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: fit-content;
+    gap: 5px;
+    padding: 0px 5px 0px 5px;
+    
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 32px;
+    @include chipBoxShadow;
+}
+
+.herum-chip-container:hover {
+	background-color: var(--hover-color);
+}
+
+.fa-solid {
+    color: var(--secondary-color);
+}

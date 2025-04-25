@@ -1,0 +1,30 @@
+<div class="input-container">
+    <input 
+        class="w-100"
+        [ngClass]="{'error-input':!isValid && touched && isBlured}"
+        [placeholder]="placeholder" 
+        [disabled]="disabled"
+        [value]="inputValue"
+        (input)="onInput($event)"
+        (blur)="setBlured()"
+        [type]="type"
+        [attr.formControlName]="formControlName" />
+    
+    <ng-container *ngIf="type=='search'">
+        <span class="icon" *ngIf="!inputValue && !disabled">
+            <img src="../../../../assets/shared/icons/input/green-search.png" />
+        </span>
+        <span class="icon" *ngIf="disabled">
+            <img src="../../../../assets/shared/icons/input/grey-search.png" />
+        </span>
+    </ng-container>
+    
+    <span class="icon clickable" *ngIf="inputValue && !disabled" (click)="clearInput()">
+        <img class="small-icon" src="../../../../assets/shared/icons/input/X.png" />
+    </span>
+</div>
+<label class="error-msg right">
+    <ng-container *ngIf="!isValid && touched && isBlured">
+        {{errorMsg}}
+    </ng-container>
+</label>
