@@ -1,36 +1,36 @@
 <form [formGroup]="loginForm" (ngSubmit)="_onSubmit()" class="form-container">
-  <h3 class="m-0">התחברות</h3>
-  <p class="description m-0">שלום! אנא הכנס תעודת זהות ומספר אישי כדי להתחבר</p>
-
   <!-- תעודת זהות -->
   <label for="id">תעודת זהות</label>
-  <herum-input-field [type]="'number'" formControlName="id">
-  </herum-input-field>
+  <herum-input-field type="text" formControlName="id"></herum-input-field>
   <div
-    *ngIf="loginForm.get('id')?.invalid && loginForm.get('id')?.touched"
+    *ngIf="loginForm.get('id')?.invalid && loginForm.get('id')?.dirty"
     class="error"
   >
     <span *ngIf="loginForm.get('id')?.errors?.['required']">
       חובה למלא תעודת זהות
     </span>
-    <span *ngIf="loginForm.get('id')?.errors?.['pattern']">
-      תעודת זהות חייבת להיות בת 9 ספרות
+    <span
+      *ngIf="loginForm.get('id')?.errors?.['minlength'] || loginForm.get('id')?.errors?.['maxlength']"
+    >
+      תעודת זהות חייבת להכיל בדיוק 9 תווים
     </span>
   </div>
 
   <!-- מספר אישי -->
   <label for="armyId">מספר אישי</label>
-  <herum-input-field [type]="'number'" formControlName="armyId">
-  </herum-input-field>
+  <herum-input-field type="text" formControlName="armyId"></herum-input-field>
   <div
-    *ngIf="loginForm.get('armyId')?.invalid && loginForm.get('armyId')?.touched"
+    *ngIf="loginForm.get('armyId')?.invalid && loginForm.get('armyId')?.dirty"
     class="error"
   >
     <span *ngIf="loginForm.get('armyId')?.errors?.['required']">
       חובה למלא מספר אישי
     </span>
     <span *ngIf="loginForm.get('armyId')?.errors?.['pattern']">
-      לפחות 6 ספרות
+      המספר האישי חייב להכיל רק ספרות
+    </span>
+    <span *ngIf="loginForm.get('armyId')?.errors?.['minlength']">
+      המספר האישי חייב להכיל לפחות 6 ספרות
     </span>
   </div>
 

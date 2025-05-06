@@ -22,8 +22,18 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      id: ["", [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      armyId: ["", [Validators.required, Validators.pattern(/^\d{6,}$/)]],
+      id: [
+        "",
+        [Validators.required, Validators.minLength(9), Validators.maxLength(9)],
+      ],
+      armyId: [
+        "",
+        [
+          Validators.required,
+          Validators.pattern(/^\d+$/), // רק ספרות
+          Validators.minLength(6), // לפחות 6 ספרות
+        ],
+      ],
     });
   }
 
